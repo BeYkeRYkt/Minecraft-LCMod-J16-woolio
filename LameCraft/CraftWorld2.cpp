@@ -8433,6 +8433,12 @@ void CraftWorld::UpdateChunkBlocks(int id)
             {
                 if(x > 0 && x < 128 && y > 0 && y < 128 && z > 0 && z < 128)
                 {
+                    if(GetBlock(x,y,z) == 0)
+                    {
+                       continue;
+                    }
+
+
                     if(GetBlock(x,y,z) == 2 && GetBlock(x,y+1,z) == 0)
                     {
                         GetBlock(x,y,z) = 1;
